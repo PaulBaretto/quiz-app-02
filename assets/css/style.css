@@ -1,0 +1,134 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root{
+    --font-poppins:'Poppins', sans-serif;
+}
+body{
+    margin: 0;
+}
+body a{ 
+    text-decoration: none;
+    color: initial;
+}
+.qa-container{
+    padding-inline: 20px;
+}
+.head-wrapper{
+    position: relative;
+    background-color: #FFC102;
+    border-radius: 0 0 30px 30px;
+    padding-block: 25px;
+    z-index: 1;
+}
+.head-wrapper::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 10%;
+    filter: blur(4);
+    background: url(../images/background-addons.png) no-repeat top / contain;
+    z-index: 0;
+    /* background: url(../images/background-addons.png) rgb(255, 193, 2, 0.3) no-repeat center center / cover; */
+}
+.name-and-profile{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.qa-back-arrow a i{
+    font-size: 35px;
+    color: #fff;
+}
+.greeting-name h2{
+    font-size: 25px;
+    font-family: var(--font-poppins);
+    color: #fff;
+    font-weight: 600;
+}
+.user-profile img{
+    border: 4px solid #fff;
+    width: 100%;
+    border-radius: 50%;
+}
+.popular-quiz-holder{
+    margin-top: 10px;
+    position: relative;
+    z-index: 2;
+}
+.popular-quiz-holder h3{
+    font-size: 20px;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    color: #fff;
+}
+.popular-qa-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+}
+.qa-holder{
+    display: block;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    display: grid;
+    align-items: center;
+    gap: 20px;
+}
+.qa-holder p{
+    font-family: var(--font-poppins);
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    text-align: start;
+    margin: 0;
+}
+.qa-holder .icon-container{
+    display: flex;
+    justify-content: center;
+}
+.qa-holder .icon-container i{
+    text-align: center;
+    color: #FFAD00;
+    font-size: 4rem;
+}
+.explore-title-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 15px 10px;
+}
+.explore-title-wrap h3{
+    font-size: 20px;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    color: #000;
+}
+.explore-title-wrap a{
+    display: block;
+    font-size: 15px;
+    font-family: var(--font-poppins);
+    font-weight: 400;
+    color: #373737;
+}
+.explore-wrapper .explore-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+}
+.explore-grid .qa-holder{
+    transition: 0.2s linear;
+    box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.10), 2px 1px 3px 0px rgba(0, 0, 0, 0.09), 5px 3px 3px 0px rgba(0, 0, 0, 0.05), 9px 5px 4px 0px rgba(0, 0, 0, 0.01), 14px 8px 4px 0px rgba(0, 0, 0, 0.00);
+}
+.explore-grid .qa-holder:hover,
+.explore-grid .qa-holder:focus{
+    background-color: #f2efef;
+}
