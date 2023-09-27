@@ -5,6 +5,9 @@
 :root{
     --font-poppins:'Poppins', sans-serif;
 }
+.fortest{
+    height: 100vh;
+}
 body{
     margin: 0;
 }
@@ -31,9 +34,8 @@ body a{
     height: 100%;
     opacity: 10%;
     filter: blur(4);
-    background: url(../images/background-addons.png) no-repeat top / contain;
-    z-index: 0;
-    /* background: url(../images/background-addons.png) rgb(255, 193, 2, 0.3) no-repeat center center / cover; */
+    background: url(../images/background-addons.png) no-repeat top / cover;
+    z-index: -1;
 }
 .name-and-profile{
     position: relative;
@@ -131,4 +133,182 @@ body a{
 .explore-grid .qa-holder:hover,
 .explore-grid .qa-holder:focus{
     background-color: #f2efef;
+}
+
+/* quiz page  */
+.quiz-page .head-wrapper{
+    padding-block: 25px 0;
+}
+.quiz-head-inner{
+    display: flex;
+    justify-content: space-between;
+}
+.quiz-head-inner .qa-nav-icon i{
+    color: #fff;
+    font-size: 30px;
+}
+.qa-score-wrapper{
+    padding-inline: 10px;
+}
+.score-value-holder{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    margin-top: 100px;
+    padding-inline: 10px;
+    border-radius: 20px 20px 0 0;
+}
+.score-value-holder .answer-true p,
+.score-value-holder .answer-fales p,
+.score-value-holder .current-question p,
+.question-outof-holder p{
+    font-size: 20px;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+}
+.score-value-holder .answer-true p{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #1F8435;
+    height: fit-content;
+}
+.score-value-holder .answer-fales p{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #D05A04;
+    height: fit-content;
+}
+.score-value-holder .answer-true p span,
+.score-value-holder .answer-fales p span{
+    width: 30px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 6px;
+    background-color: #D05A04;
+    max-width: 60px;
+}
+.score-value-holder .answer-true p span{
+    background-color: #1F8435;
+}
+.question-end{
+    display: grid;
+    margin-top: -50px;
+}
+.score-value-holder .current-question{
+    position: relative;
+}
+.score-value-holder .current-question{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    max-width: 100px;
+    height: 100px;
+    margin-inline: auto;
+}
+.score-value-holder .current-question p{
+    font-size: 25px;
+    font-weight: 600;
+    color: #FEB005;
+    padding: 5px;
+    text-align: center;
+}
+.current-question span{
+    width: 80%;
+    height: 80%;
+    display: block;
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 5px solid #FEB005;
+    border-top-color:transparent ;
+    margin: auto;
+    border-radius: 50%;
+}
+.question-outof-holder p{
+    color: #FEB005;
+}
+
+.quiz-sec-wrap{
+    display: grid;
+    row-gap: 60px;
+}
+.question-container{
+    padding: 20px 10px;
+    background-color: #fff;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0px 5px 4px 2px #FBECFF;
+    margin-inline: 10px;
+}
+.question-container p{
+    font-family: var(--font-poppins);
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+    text-align: center;
+}
+.quiz-option-container{
+    margin-top: 15px;
+}
+.options-wrap{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 25px;
+}
+.quiz-labal{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px;
+    border: 2px solid #FFB504;
+    border-radius: 20px;
+    /* cursor: pointer; */
+}
+.quiz-labal p{
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    font-family: var(--font-poppins);
+}
+.quiz-labal div{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.quiz-labal div span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    position: absolute;
+    top: 23px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #FFB504;
+    background-color: #F5F5F5;
+    z-index: -1;
+    border-radius: 50%;
+}
+.quiz-labal div span i{
+    font-size: 18px;
+    color: #fff;
+}
+.quiz-labal div input{
+    opacity: 0;
+}
+.quiz-labal div input:checked ~ span{
+    background-color: #FFB504;
+
+}
+.quiz-labal div input:checked ~ span i{
+    opacity: 1;
 }
