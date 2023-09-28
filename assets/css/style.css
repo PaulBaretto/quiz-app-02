@@ -263,27 +263,27 @@ body a{
     grid-template-columns: repeat(1,1fr);
     gap: 25px;
 }
-.quiz-labal{
+.quiz-label{
     display: flex;
     justify-content: space-between;
     padding: 0px 15px;
     border: 2px solid #FFB504;
     border-radius: 20px;
-    /* cursor: pointer; */
+    cursor: pointer;
 }
-.quiz-labal p{
+.quiz-label p{
     font-size: 20px;
     font-weight: 400;
     color: #000;
     font-family: var(--font-poppins);
 }
-.quiz-labal div{
+.quiz-label div{
     display: grid;
     align-items: center;
     justify-content: center;
     position: relative;
 }
-.quiz-labal div span{
+.quiz-label div span{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -298,17 +298,17 @@ body a{
     z-index: -1;
     border-radius: 50%;
 }
-.quiz-labal div span i{
+.quiz-label div span i{
     font-size: 18px;
     color: #fff;
 }
-.quiz-labal div input{
+.quiz-label div input{
     opacity: 0;
 }
-.quiz-labal div input:checked ~ span{
+.quiz-label div input:checked ~ span{
     background-color: #FFB504;
 
 }
-.quiz-labal div input:checked ~ span i{
+.quiz-label div input:checked ~ span i{
     opacity: 1;
 }
