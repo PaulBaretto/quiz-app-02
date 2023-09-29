@@ -23,16 +23,24 @@ theDeta.then((value1) => {
     the_question2.textContent = data.results[0].question;
     theOptions = incorrect__Answer.concat(correct__Answer);
 
-    
-    // quiz_label.forEach(label => {
-    //     label.addEventListener('click', () => {
-    //         console.log('test4')
-    //         // if(e.target !== correct__Answer){
-    //         //     // let quiz_icon_i = label.querySelector('span i')
-    //         //     console.log('test')
-    //         // } 
-    //     })
-    // })
+
+    options_wrapper.addEventListener('change', (e) => {
+        // Check if the clicked element has the class 'quiz-label'
+            if (e.target.value === correct__Answer) {
+                console.log('Correct answer');
+            } else {
+                console.log('Not the correct answer');
+                let p = options_wrapper;
+                console.log(p);
+                const icon_i = p.querySelectorAll('span i');
+                incorrect__Answer.forEach(test => {
+                    
+                    test.className = 'fa-solid fa-xmark';
+                })
+                // console.log(icon_i)
+                // icon_i = incorrect__Answer;
+            }
+    });
 
     // foreach for options add textContent from api
         theOptions.forEach(allOption => {
@@ -48,6 +56,7 @@ theDeta.then((value1) => {
             quiz_label.className = 'quiz-label';
             input_radio.setAttribute('type', 'radio');
             input_radio.setAttribute('name', 'quiz');
+            input_radio.setAttribute('value',allOption);
             icon_i.className = 'fa-solid fa-check';  
 
             options_wrapper.appendChild(quiz_div);
@@ -61,7 +70,6 @@ theDeta.then((value1) => {
 
     });
 
-    
 
 })
 
