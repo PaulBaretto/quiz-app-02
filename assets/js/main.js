@@ -26,47 +26,58 @@ theDeta.then((value1) => {
 
     options_wrapper.addEventListener('change', (e) => {
         // Check if the clicked element has the class 'quiz-label'
-            if (e.target.value === correct__Answer) {
-                console.log('Correct answer');
-            } else {
-                console.log('Not the correct answer');
-                let p = options_wrapper;
-                console.log(p);
-                const icon_i = p.querySelectorAll('span i');
-                incorrect__Answer.forEach(test => {
-                    
-                    test.className = 'fa-solid fa-xmark';
-                })
-                // console.log(icon_i)
-                // icon_i = incorrect__Answer;
+        if (e.target.value !== correct__Answer) {
+            let labelElement = e.target.closest('.quiz-label');
+            if (labelElement) {
+                labelElement.classList.add('not-correct');
+                let icon = labelElement.querySelector('i');
+                icon.className = 'fa-solid fa-xmark';
+
+                // remove class from unActiveLabel 
+                const allLabels = document.querySelectorAll('.quiz-label');
+                allLabels.forEach(unActiveLabel => {
+                    if (unActiveLabel !== labelElement) {
+                        unActiveLabel.classList.remove('not-correct');
+                    }
+                });
             }
+
+        } else {
+            console.log('correct answer');
+            // let p = options_wrapper;
+            // console.log(p);
+            // const icon_i = p.querySelectorAll('span i');
+            // incorrect__Answer.forEach(test => {
+            //     test.className = 'fa-solid fa-xmark';
+            // })
+        }
     });
 
-    // foreach for options add textContent from api
-        theOptions.forEach(allOption => {
-            quiz_div = document.createElement("div");
-            quiz_label = document.createElement('label');
-            quiz_ptag = document.createElement('p');
-            quiz_icon_holder = document.createElement('div');
-            input_radio = document.createElement('input');
-            icon_span = document.createElement('span');
-            icon_i = document.createElement('i');
+    // foreach  options add textContent from api
+    theOptions.forEach(allOption => {
+        quiz_div = document.createElement("div");
+        quiz_label = document.createElement('label');
+        quiz_ptag = document.createElement('p');
+        quiz_icon_holder = document.createElement('div');
+        input_radio = document.createElement('input');
+        icon_span = document.createElement('span');
+        icon_i = document.createElement('i');
 
-            quiz_div.className = 'quiz-item';
-            quiz_label.className = 'quiz-label';
-            input_radio.setAttribute('type', 'radio');
-            input_radio.setAttribute('name', 'quiz');
-            input_radio.setAttribute('value',allOption);
-            icon_i.className = 'fa-solid fa-check';  
+        quiz_div.className = 'quiz-item';
+        quiz_label.className = 'quiz-label';
+        input_radio.setAttribute('type', 'radio');
+        input_radio.setAttribute('name', 'quiz');
+        input_radio.setAttribute('value', allOption);
+        icon_i.className = 'fa-solid fa-check';
 
-            options_wrapper.appendChild(quiz_div);
-            quiz_div.appendChild(quiz_label);
-            quiz_label.appendChild(quiz_ptag);
-            quiz_label.appendChild(quiz_icon_holder);
-            quiz_icon_holder.appendChild(input_radio);
-            quiz_icon_holder.appendChild(icon_span);
-            icon_span.appendChild(icon_i);
-            quiz_ptag.textContent = allOption;
+        options_wrapper.appendChild(quiz_div);
+        quiz_div.appendChild(quiz_label);
+        quiz_label.appendChild(quiz_ptag);
+        quiz_label.appendChild(quiz_icon_holder);
+        quiz_icon_holder.appendChild(input_radio);
+        quiz_icon_holder.appendChild(icon_span);
+        icon_span.appendChild(icon_i);
+        quiz_ptag.textContent = allOption;
 
     });
 

@@ -271,6 +271,26 @@ body a{
     border-radius: 20px;
     /* cursor: pointer; */
 }
+.not-correct.quiz-label{
+    animation: shake-label 0.5s ease-in-out;
+}
+@keyframes shake-label {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 .quiz-label p{
     font-size: 20px;
     font-weight: 400;
@@ -298,20 +318,20 @@ body a{
     z-index: -1;
     border-radius: 50%;
 }
+
 .quiz-label div span i{
     font-size: 18px;
     color: #fff;
-    /* opacity: 0; */
-}
-.quiz-label div span i.fa-xmark{
-    color: red;
+    opacity: 0;
 }
 .quiz-label div input{
     opacity: 0; 
 }
 .quiz-label div input:checked ~ span{
     background-color: #FFB504;
-
+}
+.not-correct.quiz-label div input:checked ~ span {
+    background-color: red;
 }
 .quiz-label div input:checked ~ span i{
     opacity: 1;
