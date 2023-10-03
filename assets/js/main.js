@@ -129,7 +129,7 @@ theData
       options_wrapper.addEventListener("change", function (e) {
         const currentData = data.results[currentQuestion];
 
-        console.log(e.target.value, "<<", currentData.correct_answer, ">>");
+        // console.log(e.target.value, "<<", currentData.correct_answer, ">>");
 
         if (e.target.value !== currentData.correct_answer) {
           let labelElement = e.target.closest(".quiz-label");
