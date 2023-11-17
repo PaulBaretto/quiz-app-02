@@ -79,10 +79,11 @@ theData
       icon_span.appendChild(icon_i);
       quiz_ptag.textContent = allOption;
     });
-
-    current_question.textContent = `${currentQuestion}`;
+    currentQuestion = currentQuestion + 1;
+    current_question.textContent = currentQuestion;
     let newSpan = document.createElement("span");
     current_question.appendChild(newSpan);
+    // let curQuesPlusOne = currentQuestion + 1;
     remain_question.textContent = `${currentQuestion}/${totalQuestion}`;
 
     nextBtn.addEventListener("click", nextQuestion);
